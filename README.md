@@ -1,1 +1,1 @@
-# jquery--calendar
+# jquery-calendar
