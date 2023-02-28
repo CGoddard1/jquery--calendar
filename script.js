@@ -5,9 +5,9 @@ function updateTime() {
   let today = moment();
 
 //update the time in the element header
-$('currentDay').text(today.format('dddd, MMMM Do YYYY, h:mm:ss'));
+$('#currentDay').text(today.format('dddd, MMMM Do YYYY, h:mm:ss'));
 
-let now = moment(). format('kk');
+let now = moment().format('kk');
 for (let i = 0; i < scheduleElArray.length; i++) {
   scheduleElArray[i].removeClass('future past present');
 
@@ -20,6 +20,31 @@ for (let i = 0; i < scheduleElArray.length; i++) {
   }
 }
 }
+// textarea elements
+let saveBtn = $('.save-icon');
+let containerEl = $('.container');
+let schedule9am = $('#9AM');
+let schedule10am = $('#10AM');
+let schedule11am = $('#11AM');
+let schedule12pm = $('#12PM');
+let schedule1pm = $('#1PM');
+let schedule2pm = $('#2PM');
+let schedule3pm = $('#3PM');
+let schedule4pm = $('#4PM');
+let schedule5pm = $('#5PM');
+
+let scheduleElArray = [
+  schedule9am,
+  schedule10am,
+  schedule11am,
+  schedule12pm,
+  schedule1pm,
+  schedule2pm,
+  schedule3pm,
+  schedule4pm,
+  schedule5pm,
+];
+
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
