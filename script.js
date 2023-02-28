@@ -3,11 +3,23 @@
 // in the html.
 function updateTime() {
   let today = moment();
+
+//update the time in the element header
+$('currentDay').text(today.format('dddd, MMMM Do YYYY, h:mm:ss'));
+
+let now = moment(). format('kk');
+for (let i = 0; i < scheduleElArray.length; i++) {
+  scheduleElArray[i].removeClass('future past present');
+
+  if (now > scheduleElArray[i].data('hour')) {
+    scheduleElArray[i].addClass('past');
+  } else if (now === scheduleElArray[i].attr('data-hour')) {
+    scheduleElArray[i].addClass('present');
+  } else {
+    scheduleElArray[i].addClass('future');
+  }
 }
-
-$("currentDay").text(today.format('dddd, MMMM Do YYYY, h:mm:ss'));
-
-
+}
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
